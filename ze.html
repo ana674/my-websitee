@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>متجر الإكسسوارات</title>
+<style>
+  body { margin:0; font-family: Arial, sans-serif; background:#fafafa; }
+  header { background:#c2185b; color:white; text-align:center; padding:15px; font-size:22px; }
+  .trust { text-align:center; background:#e8f5e9; color:#2e7d32; padding:10px; font-weight:bold; }
+  .container { padding:15px; display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:15px; }
+  .product { background:white; border-radius:12px; padding:15px; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
+  .product img { width:100%; border-radius:8px; margin-bottom:10px; }
+  .price { font-size:22px; color:#c2185b; font-weight:bold; margin:10px 0; }
+  button { background:#25D366; color:white; border:none; padding:12px; width:100%; border-radius:6px; font-size:16px; cursor:pointer; }
+  button:hover { opacity:0.9; }
+  .pack { border:2px solid #c2185b; border-radius:10px; padding:10px; text-align:center; margin-bottom:15px; }
+  footer { text-align:center; padding:10px; color:#777; font-size:14px; }
+  .form-group { margin:8px 0; text-align:right; }
+  input { width:100%; padding:8px; border-radius:6px; border:1px solid #ccc; font-size:16px; }
+</style>
+</head>
+<body>
+
+<header>متجر الإكسسوارات النسائية 💍</header>
+<div class="trust">✔ توصيل لجميع المدن | ✔ الدفع عند الاستلام | ✔ جودة مضمونة</div>
+
+<div class="container">
+
+  <!-- باك 1 -->
+  <div class="product pack">
+    <img src="c:\Users\anas\Pictures\IMG_20260119_184700_945.webp" alt="باك 1">
+    <h3>باك 1 🔹</h3>
+    <p>✔ جوج قطع</p>
+    <div class="price">179 درهم</div>
+    <div class="form-group">
+      <input type="text" id="name1" placeholder="اسمك">
+    </div>
+    <div class="form-group">
+      <input type="text" id="phone1" placeholder="رقم الهاتف">
+    </div>
+    <div class="form-group">
+      <input type="text" id="city1" placeholder="المدينة">
+    </div>
+    <button onclick="orderPackForm('باك 1','180','1')">اطلب هذا الباك</button>
+  </div>
+
+  <!-- باك 2 -->
+  <div class="product pack">
+    <img src="c:\Users\anas\Pictures\IMG_20260119_195906_194.webp" alt="باك 2">
+    <h3>باك 2 🔥</h3>
+    <p>✔ جوج قطع</p>
+    <div class="price">179 درهم</div>
+    <div class="form-group">
+      <input type="text" id="name2" placeholder="اسمك">
+    </div>
+    <div class="form-group">
+      <input type="text" id="phone2" placeholder="رقم الهاتف">
+    </div>
+    <div class="form-group">
+      <input type="text" id="city2" placeholder="المدينة">
+    </div>
+    <button onclick="orderPackForm('باك 2','179','2')">اطلب هذا الباك</button>
+  </div>
+
+  <!-- باك 3 -->
+  <div class="product pack">
+    <img src="c:\Users\anas\Pictures\IMG_20260119_200011_870.webp" alt="باك 3">
+    <h3>باك 3 💎</h3>
+    <p>✔ جوج قطع</p>
+    <div class="price">179 درهم</div>
+    <div class="form-group">
+      <input type="text" id="name3" placeholder="اسمك">
+    </div>
+    <div class="form-group">
+      <input type="text" id="phone3" placeholder="رقم الهاتف">
+    </div>
+    <div class="form-group">
+      <input type="text" id="city3" placeholder="المدينة">
+    </div>
+    <button onclick="orderPackForm('باك 3','99','3')">اطلب هذا الباك</button>
+  </div>
+
+</div>
+
+<footer>© 2026 جميع الحقوق محفوظة</footer>
+
+<script>
+function orderPackForm(pack, price, id){
+  var phone = '2126XXXXXXXX'; // ضع رقمك هنا
+  var name = document.getElementById('name'+id).value;
+  var phoneUser = document.getElementById('phone'+id).value;
+  var city = document.getElementById('city'+id).value;
+
+  if(name=='' || phoneUser=='' || city==''){
+    alert('المرجو ملء جميع الحقول');
+    return;
+  }
+
+  var msg = 'طلب جديد%0A' +
+            'الباك: ' + pack + '%0A' +
+            'الثمن: ' + price + '%0A' +
+            'الاسم: ' + name + '%0A' +
+            'رقم الهاتف: ' + phoneUser + '%0A' +
+            'المدينة: ' + city;
+
+  window.open('https://wa.me/' + phone + '?text=' + msg,'_blank');
+}
+</script>
+
+</body>
+</html>
